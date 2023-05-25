@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기본 선택자</title>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <style>
+      section {
+        padding: 20px;
+        border-bottom: 1px solid #666;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="wrap">
+      <h1 class="logo">기본 선택자</h1>
+      <h2 id="title">제목 1</h2>
+      <h3 class="sub_title">제목 2</h3>
+      <h3 class="sub_title">제목 3</h3>
+    </section>
+
+    <section class="section">
+      <h1>인접 관계 선택자</h1>
+      <h2>제목 2</h2>
+      <h3>제목 3</h3>
+      <p class="title_1">내용 1</p>
+      <p class="title_2">내용 2</p>
+      <p class="title_3">내용 3</p>
+      <p class="title_4">내용 4</p>
+      <p class="title_5">내용 5</p>
+    </section>
+
+    <section>
+      <ul id="list">
+        <li>
+          리스트 1
+          <ul>
+            <li>리스트 1-1</li>
+            <li>리스트 1-2</li>
+            <li>리스트 1-3</li>
+          </ul>
+        </li>
+        <li>리스트 2</li>
+        <li>리스트 3</li>
+      </ul>
+    </section>
+
+    <script>
+      //   $("*").css("color", "red"); //전체 선택자
+      //   $("#title").css("color", "tomato").css("border", "4px solid red"); //아이디 선택자
+      //   $(".sub_title").css({ color: "blue", border: "4px solid red" });
+      //   $("h3").css("fontSize", 30); //요소 선택자
+      //   $("h1, #title").css("backgroundColor", "orange"); //그룹 선택자
+      //   $("h1.logo").css("color", "white"); //종속
+
+      // 인접관계 선택자
+      $("h2").parent().css("border", "5px solid #666"); //부모요소
+      $("#wrap h1").css("color", "red"); //하위요소
+      $("#list > li").css("border", "1px solid red"); //자식요소
+      $(".section h2").prev().css("color", "green"); //이전
+      $(".section h2").next().css("color", "blue"); //다음
+      $(".section h3").siblings().css("border", "3px solid red"); //
+    </script>
+  </body>
+</html>
