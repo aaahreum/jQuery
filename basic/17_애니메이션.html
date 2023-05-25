@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script src="./js/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">버튼 1</button>
+      <span class="text1" style="background: aqua">500px 이동</span>
+    </p>
+    <p>
+      <button class="btn2">버튼 2</button>
+      <span class="text2" style="background: tomato">50px 이동</span>
+    </p>
+
+    <script>
+      // $(요소).animate(스타일, 시간, 이징, 콜백)
+      $(".btn1").on("click", function () {
+        $(".text1").animate({ marginLeft: 500, fontSize: 30 }, 2000, function () {
+          alert("hello");
+        });
+      });
+
+      $(".btn2").on("click", function () {
+        $(".text2").animate({ marginLeft: "+=50px" });
+      });
+    </script>
+  </body>
+</html>

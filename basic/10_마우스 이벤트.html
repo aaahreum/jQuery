@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <style>
+      section {
+        padding: 30px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>마우스 이벤트</h1>
+    <div class="wrap">
+      <section>
+        <button class="btn1">버튼 1</button>
+        <p>내용 1</p>
+        <button class="btn2">버튼 2</button>
+        <p>내용 2</p>
+      </section>
+
+      <script>
+        $(".btn1").click(function () {
+          $(this).next().css("background", "red");
+        });
+
+        $(".btn2").hover(
+          function () {
+            $(this).next().css("background", "green");
+          },
+          function () {
+            $(this).next().css("background", "orange");
+          }
+        );
+      </script>
+
+      <section>
+        <ul id="box1">
+          <li><a href="#">내용 1</a></li>
+          <li><a href="#">내용 2</a></li>
+          <li><a href="#">내용 3</a></li>
+        </ul>
+        <ul id="box2">
+          <li><a href="#">내용 1</a></li>
+          <li><a href="#">내용 2</a></li>
+          <li><a href="#">내용 3</a></li>
+        </ul>
+
+        <script>
+          $("#box1").on("mouseout", function () {
+            $("#box1 li").css("background", "yellow");
+          });
+          $("#box2").on("mouseleave", function () {
+            $("#box2 li").css("background", "red");
+          });
+        </script>
+
+        <section>
+          <h3>mousemove</h3>
+          <p>x좌표 : <span class="posX"></span></p>
+          <p>y좌표 : <span class="posY"></span></p>
+        </section>
+        <script>
+          $(document).on("mousemove", function (e) {
+            // console.log(e);
+            $(".posX").text(e.pageX);
+            $(".posY").text(e.pageY);
+          });
+        </script>
+      </section>
+
+      <section>
+        <select name="" id="site">
+          <option value="https://google.com">구글</option>
+          <option value="https://daum.net">다음</option>
+          <option value="https://naver.com">네이버</option>
+        </select>
+        <p class="site">Hello</p>
+        <p><a href="https://daum.net" class="btn">이벤트 객체</a></p>
+      </section>
+    </div>
+    <script>
+      // change
+      $("#site").on("change", function () {
+        $(".site").text($(this).val());
+      });
+
+      // 이벤트 객체
+      $(".btn").click(function (e) {
+        e.preventDefault();
+        console.log(e.target.text);
+      });
+    </script>
+  </body>
+</html>
