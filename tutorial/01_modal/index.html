@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery | modal</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Modal</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure repellendus earum libero tempora quis odit aperiam ex nesciunt nulla
+          laboriosam! Perspiciatis nam dolorem, animi iste impedit consequuntur omnis a nihil.
+        </p>
+
+        <a href="#x" class="more_btn">read more..</a>
+      </div>
+    </div>
+
+    <div class="dimm"></div>
+    <div class="modal">
+      <h2>I am Modal</h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perspiciatis aut culpa deleniti quae adipisci provident, dignissimos
+        recusandae autem, veritatis distinctio facilis fugiat eos. Illum quis ipsam minus maxime quibusdam dolores esse reprehenderit fugit aperiam
+        corrupti, rerum accusantium labore soluta. Doloremque, omnis cupiditate ad quam quae, similique fugit nemo perspiciatis excepturi, porro
+        officiis quaerat asperiores libero ea quos quisquam consectetur.
+      </p>
+      <button class="close_btn">close</button>
+    </div>
+
+    <script>
+      $(".more_btn").click(function () {
+        $(".dimm").show();
+        $(".modal").show();
+      });
+
+      $(".close_btn").click(function () {
+        $(".dimm").hide();
+        $(".modal").hide();
+      });
+    </script>
+  </body>
+</html>
