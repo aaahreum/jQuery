@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery | accordion</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Accordion</h1>
+    </div>
+
+    <div class="accordion">
+      <h2 class="active">This is title 1</h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nisi omnis quis ex quae dolorem repellat in. Ex incidunt cum, consequuntur,
+        autem et quo id minus ad ut eveniet dignissimos!
+      </p>
+
+      <h2>This is title 2</h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus consectetur, maxime cupiditate modi alias soluta, eum quas ea id
+        ipsum explicabo iure vel. Labore nam accusantium sed nulla dolorem eos sapiente adipisci provident officiis, voluptatum eligendi impedit
+        soluta, repellat pariatur similique. Quidem eius voluptatibus vitae deleniti corporis dicta alias.
+      </p>
+
+      <h2>This is title 3</h2>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis error nam. At recusandae odit deserunt ratione vitae alias aliquam.
+      </p>
+    </div>
+
+    <script>
+      var title = $(".accordion h2");
+
+      title.click(function () {
+        $(this).toggleClass("active");
+        $(this).next().slideToggle();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  background-color: #ddd;
+}
+
+.side {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 32px;
+  text-align: center;
+  color: #666;
+  transition: right 0.5s;
+}
+
+.active {
+  right: 0;
+}
+
+.banner {
+  height: 100px;
+  background-color: #eee;
+  line-height: 100px;
+  margin: 10px 0;
+}
+
+ul li {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  left: -40px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 30px;
+}

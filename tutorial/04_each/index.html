@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery | each</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>each</h1>
+
+      <div class="card">
+        <div class="photo">
+          <img src="../images/img_01.jpg" alt="" />
+          <div class="sns">
+            <i class="xi-share"></i>
+            <i class="xi-instagram"></i>
+            <i class="xi-kakaostory"></i>
+            <i class="xi-youtube-play"></i>
+          </div>
+        </div>
+
+        <div class="text">
+          <h2>This is a title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis impedit hic nesciunt, laboriosam perspiciatis itaque asperiores obcaecati
+            expedita vitae aspernatur eveniet tenetur et, at autem sunt nulla recusandae nemo? Iste?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".sns").hover(
+        function () {
+          $(".sns i").each(function (index) {
+            console.log(index);
+            $(this)
+              .stop()
+              .animate({ left: index * 50 }, "fast");
+          });
+        },
+        function () {
+          $(".sns i").each(function () {
+            $(this).stop().animate({ left: 0 }, "fast");
+          });
+        }
+      );
+    </script>
+  </body>
+</html>

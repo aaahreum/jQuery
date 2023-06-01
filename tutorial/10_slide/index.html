@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery | slide</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Auto slide</h1>
+    </div>
+
+    <div class="slider">
+      <div class="slide">
+        <a href="#"><img src="../images/img_01.jpg" alt="" /></a>
+        <a href="#"><img src="../images/img_02.jpg" alt="" /></a>
+        <a href="#"><img src="../images/img_03.jpg" alt="" /></a>
+        <a href="#"><img src="../images/img_04.jpg" alt="" /></a>
+      </div>
+    </div>
+
+    <script>
+      // setInterval(function () {
+      //   $(".slide").animate({ top: -400 }, function () {
+      //     $(".slide a:first").appendTo(".slide");
+      //     $(".slide").css("top", 0);
+      //   });
+      // }, 1000);
+      setInterval(function () {
+        $(".slide").animate({ left: -800 }, function () {
+          $(".slide a:first").appendTo(".slide");
+          $(".slide").css("left", 0);
+        });
+      }, 2000);
+    </script>
+  </body>
+</html>

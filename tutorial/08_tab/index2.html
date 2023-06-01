@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery | tab2</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>tab2</h1>
+
+      <ul class="tab">
+        <li><a href="#">tab 1</a></li>
+        <li><a href="#">tab 2</a></li>
+        <li><a href="#">tab 3</a></li>
+      </ul>
+
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptates at, nemo commodi labore, deleniti, praesentium repellendus hic
+        ratione illo fugit molestias debitis vero molestiae veniam modi repellat. Architecto possimus delectus eveniet ex maiores, consequatur
+        doloribus nemo minima sit? Eum expedita consectetur ad inventore culpa soluta quas, et eligendi perferendis!
+      </div>
+
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptates at, nemo commodi labore, deleniti, praesentium repellendus hic
+        ratione illo fugit molestias debitis vero molestiae veniam modi repellat. Architecto possimus delectus eveniet ex maiores, consequatur
+        doloribus nemo minima sit? Eum expedita consectetur ad inventore culpa soluta quas, et eligendi perferendis! Lorem ipsum, dolor sit amet
+        consectetur adipisicing elit. Explicabo voluptates at, nemo commodi labore, deleniti, praesentium repellendus hic ratione illo fugit molestias
+        debitis vero molestiae veniam modi repellat. Architecto possimus delectus eveniet ex maiores, consequatur doloribus nemo minima sit? Eum
+        expedita consectetur ad inventore culpa soluta quas, et eligendi perferendis!
+      </div>
+
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptates at, nemo commodi labore, deleniti, praesentium repellendus hic
+        ratione illo fugit molestias debitis vero molestiae veniam modi repellat.
+      </div>
+    </div>
+
+    <script>
+      $(".tab li").eq(0).addClass("active");
+      $(".content").hide().eq(0).show();
+
+      $(".tab li").click(function () {
+        $(".tab li").removeClass("active");
+        $(this).addClass("active");
+
+        var idx = $(this).index();
+        $(".content").hide();
+        $(".content").eq(idx).show();
+      });
+    </script>
+  </body>
+</html>
