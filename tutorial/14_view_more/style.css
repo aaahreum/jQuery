@@ -1,0 +1,42 @@
+.container {
+  text-align: center;
+}
+
+main {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  background-color: #666;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 30px 0;
+}
+
+button.active {
+  background-color: #000;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.list {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.list li {
+  height: 120px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 120px;
+  display: none;
+}

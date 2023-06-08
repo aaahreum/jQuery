@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery | Magnific Popup</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./js/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="./js/magnific-popup.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Magnific Popup</h1>
+      <div class="main">
+        <div class="btns">
+          <a class="btn popup-modal" href="#test-modal">Open Modal</a>
+          <a class="btn popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open Youtube Video</a>
+          <a class="btn simple-ajax-popup" href="http://127.0.0.1:5500/tutorial/15_magnific_popup/ajax.html">Load ajax</a>
+        </div>
+      </div>
+
+      <p>Single image lightbox</p>
+      <div class="single">
+        <a class="image-popup-vertical-fit" href="../images/img_01_b.jpg" title="안녕하세요"><img src="../images/img_01.jpg" alt="" /></a>
+        <a class="image-popup-fit-width" href="../images/img_02_b.jpg" title="나는 제이쿼리입니다."><img src="../images/img_02.jpg" alt="" /></a>
+        <a class="image-popup-no-margins" href="../images/img_03_b.jpg" title="안녕하세요"><img src="../images/img_03.jpg" alt="" /></a>
+      </div>
+
+      <p>gallery lightbox</p>
+      <div class="gallery">
+        <a href="./images/imag_01.jpg" title="암벽도시"><img src="./images/imag_01.jpg" width="75" height="75" /></a>
+        <a href="./images/imag_02.jpg" title="궁전"><img src="./images/imag_02.jpg" width="75" height="75" /></a>
+        <a href="./images/imag_03.jpg" title="여자"><img src="./images/imag_03.jpg" width="75" height="75" /></a>
+        <a href="./images/imag_04.jpg" title="해변"><img src="./images/imag_04.jpg" width="75" height="75" /></a>
+        <a href="./images/imag_05.jpg" title="문"><img src="./images/imag_05.jpg" width="75" height="75" /></a>
+      </div>
+    </div>
+
+    <div id="test-modal" class="modal mfp-hide white-popup-block">
+      <h1>Modal dialog</h1>
+      <p>
+        You won't be able to dismiss this by usual means (escape or click button), but you can close it programatically based on user choices or
+        actions.
+      </p>
+      <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+    </div>
+
+    <script>
+      //modal
+      $(".popup-modal").magnificPopup({
+        type: "inline",
+        preloader: false,
+        focus: "#username",
+        modal: true,
+      });
+      $(document).on("click", ".popup-modal-dismiss", function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+      });
+
+      // youtube
+      $(".popup-youtube").magnificPopup({
+        disableOn: 700,
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false,
+      });
+
+      //ajax
+      $(".simple-ajax-popup").magnificPopup({
+        type: "ajax",
+      });
+
+      //single lightbox
+      $(".image-popup-vertical-fit").magnificPopup({
+        type: "image",
+        closeOnContentClick: true,
+        mainClass: "mfp-img-mobile",
+        image: {
+          verticalFit: true,
+        },
+      });
+
+      $(".image-popup-fit-width").magnificPopup({
+        type: "image",
+        closeOnContentClick: true,
+        image: {
+          verticalFit: false,
+        },
+      });
+
+      $(".image-popup-no-margins").magnificPopup({
+        type: "image",
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: "mfp-no-margins mfp-with-zoom", // class to remove default margin from left and right side
+        image: {
+          verticalFit: true,
+        },
+        zoom: {
+          enabled: true,
+          duration: 300, // don't foget to change the duration also in CSS
+        },
+      });
+
+      //gallery lightbox
+      $(".gallery").magnificPopup({
+        delegate: "a",
+        type: "image",
+        tLoading: "Loading image #%curr%...",
+        mainClass: "mfp-img-mobile",
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+          titleSrc: function (item) {
+            return item.el.attr("title") + "<small>by Marsel Van Oosten</small>";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
